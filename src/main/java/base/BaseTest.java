@@ -11,8 +11,7 @@ import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
     protected AppiumDriver<MobileElement> driver;
-
-    public void initializeDriver(String testName) throws Exception {
+    public AppiumDriver<MobileElement> initializeDriver(String testName) throws Exception {
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability("platformName", "Android");
         caps.setCapability("deviceName", "Galaxy.*");
@@ -32,9 +31,13 @@ public class BaseTest {
                 caps
         );
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        return driver;
     }
 
     public void quitDriver() {
         if (driver != null) driver.quit();
+    }
+    public void quitKeyboard() {
+        driver.hideKeyboard();
     }
 }
