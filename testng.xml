@@ -1,0 +1,23 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="LambdaTest Internet Speed Suite" parallel="tests" thread-count="2">
+    <test name="Download Test">
+        <classes>
+            <class name="tests.DownloadSpeedTest"/>
+        </classes>
+    </test>
+    <test name="Upload Test">
+        <classes>
+            <class name="tests.UploadSpeedTest"/>
+        </classes>
+    </test>
+    <test name="Combined Test">
+        <classes>
+            <class name="tests.CombinedSpeedTest"/>
+        </classes>
+    </test>
+    <test name="Latency Test">
+        <classes>
+            <class name="tests.LatencySpeedTest"/>
+        </classes>
+    </test>
+</suite>
